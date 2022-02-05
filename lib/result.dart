@@ -21,7 +21,10 @@ class Result extends StatelessWidget {
           TextButton(
               child: Text(
                 'Retake Quiz',
-                style: TextStyle(fontSize: 24),
+                style: TextStyle(
+                  fontSize: 24,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
               onPressed: resetFun)
         ],
