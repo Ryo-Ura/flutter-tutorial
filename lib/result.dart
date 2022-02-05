@@ -26,7 +26,7 @@ class Result extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              onPressed: resetFun)
+              onPressed: resetFun),
         ],
       ),
     );
