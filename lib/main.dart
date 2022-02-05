@@ -27,7 +27,12 @@ class _MyAppState extends State<MyApp> {
   }
 
   var _totalScore = 0;
-
+  void _resetQuiz() {
+      setState(() {
+        _totalScore = 0;
+        _questionIdx = 0;
+      });
+    }
   @override
   Widget build(BuildContext context) {
     const _questions = [
@@ -62,9 +67,9 @@ class _MyAppState extends State<MyApp> {
         appBar: AppBar(
           title: Text('My first app'),
         ),
-        body: (_questionIdx < 3)
+        body: (_questionIdx < _questions.length)
             ? Quiz(questions: _questions, index: _questionIdx, answerQ: answerQ)
-            : Result(score: _totalScore),
+            : Result(score: _totalScore, resetFun: _resetQuiz),
       ),
     );
   }
